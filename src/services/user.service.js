@@ -1,5 +1,7 @@
+const API = "http://localhost:3000/users";
+
 export async function crearUsuario(usuario) {
-    const response = await fetch("http://localhost:3000/user", {
+    const response = await fetch(API, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -13,19 +15,21 @@ export async function crearUsuario(usuario) {
 
     return await response.json();
 }
+
 export async function obtenerUsuarios() {
-    const response = await fetch(`http://localhost:3000/user`,);
+    const response = await fetch(API);
     if (!response.ok) {
         throw new Error("Error al obtener los usuarios");
     }
 
     return await response.json();
 }
-export async function obtenerUsuariosPorEmail( email ) {
-    const response = await fetch(`http://localhost:3000/users?email=${email}`);
+
+export async function obtenerUsuariosPorEmail(email) {
+    const response = await fetch(`${API}?email=${email}`);
     if (!response.ok) {
         throw new Error("Error al obtener el usuario email");
     }
-    const usuario = await response.json();
-    return usuario.length > 0 ? usuario[o] : null;
+    const usuarios = await response.json();
+    return usuarios.length > 0 ? usuarios[0] : null;
 }

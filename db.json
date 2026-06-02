@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Carlos",
+      "lastname": "Ruiz",
+      "email": "carlos@taskflow.com",
+      "password": "123456",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ana",
+      "lastname": "Torres",
+      "email": "ana@taskflow.com",
+      "password": "123456",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "name": "uyefuyu",
+      "lastname": "fff",
+      "email": "vvv@gmail.com",
+      "password": "43234141414141",
+      "roles": [
+        "ADMIN"
+      ],
+      "id": "0Sc9Fd6sRBg"
+    },
+    {
+      "name": "uyefuyu",
+      "lastname": "fff",
+      "email": "ggggagga@gmail.com",
+      "password": "1048071725",
+      "roles": [
+        "ADMIN"
+      ],
+      "id": "XLHvrxAi4GI"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "",
+      "description": "",
+      "status": "Pendiente",
+      "dueDate": "",
+      "userId": "1",
+      "id": "dsBBDbdxKWY"
+    },
+    {
+      "title": "hola mundo",
+      "description": "es una tarea para aprender javascript",
+      "status": "Completada",
+      "dueDate": "2026-06-04",
+      "userId": "1",
+      "id": "gOzDwmLXFOs"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

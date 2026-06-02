@@ -1,14 +1,23 @@
-import { renderLogin, setupLogin } from "../views/auth/login";
-import { renderRegister, setupRegister } from "../views/auth/register";
-import { renderDashboard, setupDashboard } from "../views/dashboard";
-import { renderAdmin, setupAdmin } from "../views/admin";
+import { renderLogin } from "../views/auth/login";
+import { renderRegister } from "../views/auth/register";
+import { renderDashboard } from "../views/user/dashboard";
+import { renderAdmin } from "../views/user/admin";
 import { renderHome } from "../views/home";
-import { renderTasks, setupTasksFromView } from "../views/tasks";
-import { renderTaskForm, setupTaskFormFromView } from "../views/taskForm";
-import { renderProfile, setupProfileFromView } from "../views/profile";
+import { renderTasks } from "../views/tasks/tasks";
+import { renderTaskForm } from "../views/tasks/task-form";
+import { renderProfile } from "../views/user/profile";
+import { renderNotFound } from "../views/auth/not-found";
+
+import { setupLogin } from "../controllers/auth/login";
+import { setupRegister } from "../controllers/auth/register";
+import { setupDashboard } from "../controllers/user/dashboard";
+import { setupAdmin } from "../controllers/user/admin";
+import { setupTasks } from "../controllers/tasks/tasks";
+import { setupTaskForm } from "../controllers/tasks/task-form";
+import { setupProfile } from "../controllers/user/profile";
 
 
-const routes = {
+export const routes = {
 
     "/": {
         render: renderHome,
@@ -33,23 +42,28 @@ const routes = {
     "/tasks": {
         render: renderTasks,
         isAuthorized: true,
-        setup: setupTasksFromView,
+        setup: setupTasks,
     },
     "/task/new": {
         render: renderTaskForm,
         isAuthorized: true,
-        setup: setupTaskFormFromView,
+        setup: setupTaskForm,
+    },
+    "/task/edit": {
+        render: renderTaskForm,
+        isAuthorized: true,
+        setup: setupTaskForm,
     },
     "/profile": {
         render: renderProfile,
         isAuthorized: true,
-        setup: setupProfileFromView,
+        setup: setupProfile,
     },
     "/admin": {
         render: renderAdmin,
-        setup: setupAdminView,
-        isAuthorized: false,
-        requiredRole:[ "ADMIN" ]
+        setup: setupAdmin,
+        isAuthorized: true,
+        requiredRole: ["ADMIN"]
     },
 };
-export const notFoundView = RenderNotFound
+export const notFoundView = renderNotFound

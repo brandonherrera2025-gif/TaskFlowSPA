@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 | TaskFlowSPA</title>
-</head>
-
-<body class="min-h-screen bg-gradient-to-b from-sky-50 via-white to-blue-100 text-slate-800">
-  <main class="flex min-h-screen items-center justify-center px-6 py-10">
+export
+  function renderNotFound() {
+  return `
+    <main class="flex min-h-screen items-center justify-center px-6 py-10">
     <section
       class="w-full max-w-2xl rounded-[2rem] border border-blue-100 bg-white p-10 text-center shadow-xl shadow-blue-100/70">
       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">Error de navegacion</p>
@@ -17,14 +10,15 @@
         del proyecto.</p>
       <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
         <a class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-500"
-          href="/src/views/home.html">Ir a home</a>
+          href="/">Ir a home</a>
         <a class="inline-flex items-center justify-center rounded-2xl border border-blue-200 bg-white px-5 py-3 text-sm font-bold text-blue-700 hover:bg-blue-50"
-          href="/src/views/login.html">Volver al login</a>
+          href="/login">Volver al login</a>
       </div>
     </section>
   </main>
+`
+}
 
-  <script type="module" src="../main.js"></script>
-</body>
 
-</html>
+
+
